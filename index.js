@@ -13,10 +13,7 @@ app.post('/webhook', async (req, res) => {
     const message = req.body.message?.text;
 
     if (chatId && message) {
-        await axios.post(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
-            chat_id: chatId,
-            text: `Вы написали: ${message}`
-        });
+    console.log(`Получено сообщение от пользователя: ${message}`);
     }
 
     res.sendStatus(200);
